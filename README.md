@@ -100,28 +100,36 @@ uv sync --group dev
 
 ```python
 import torch
+import torch.nn.functional as F
+from dhg import Hypergraph
 from khgnn_model import KerHGNN
 from utils import load_data
 
 # Load dataset
-data = load_data('cora')
-hg = data['hypergraph']
+data, edge_list = load_data('cora')
 features = data['features']
 labels = data['labels']
 
+# Create hypergraph
+hg = Hypergraph(data['num_vertices'], edge_list)
+
 # Initialize KHGNN model
 model = KerHGNN(
-    in_channels=features.size(1),
-    hidden_channels=64,
-    out_channels=labels.max().item() + 1,
-    num_layers=2,
-    kernel_type='poly',
+    in_channels=features.shape[1],
+    hid_channels=64,
+    num_classes=labels.max().item() + 1,
+    num_layer=2,
+    kernel_type='poly',  # 'poly', 'apoly', or 'mean'
     p_min=-0.5,
-    p_max=2.0
+    p_max=2.0,
+    drop_rate=0.5
 )
 
 # Forward pass
-output = model(features, hg)
+model.eval()
+with torch.no_grad():
+    output = model(features, hg)
+    probs = F.softmax(output, dim=1)
 ```
 
 ### Quick Example
