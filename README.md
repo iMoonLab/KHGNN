@@ -216,7 +216,8 @@ uv run trans_train.py optim.lr=0.01 optim.lr_p=0.001
 ```
 
 📋 **For detailed configuration options, see [CONFIG_GUIDE.md](CONFIG_GUIDE.md)**
-  
+
+```
 optim:
   lr: 0.01
   lr_p: 0.003
