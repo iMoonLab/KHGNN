@@ -32,8 +32,7 @@ We use automated code formatting tools to maintain consistency:
 ### Manual Formatting
 ```bash
 # Format all files
-./format.bat  # Windows
-uv run format.py  # Cross-platform
+uv run black .
 
 # Format specific files
 uv run black filename.py

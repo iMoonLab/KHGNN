@@ -1,25 +1,25 @@
 [project]
 name = "khgnn"
 version = "0.1.0"
-description = "Official implementation of Kernel Hypergraph Neural Networks (KHGNN) published in IEEE TPAMI"
+description = "Official implementation of Kernelized Hypergraph Neural Networks (KHGNN) published in IEEE TPAMI"
 readme = "README.md"
 requires-python = ">=3.8,<3.11"
 dependencies = [
-    "dhg==0.9.5",
-    "hydra-core>=1.3.2",
-    "torch>=1.9.0",
-    "numpy>=1.20.0",
+  "dhg==0.9.5",
+  "hydra-core>=1.3.2",
+  "torch>=1.9.0",
+  "numpy>=1.20.0",
 ]
 keywords = ["hypergraph", "neural networks", "graph learning", "kernel methods"]
 classifiers = [
-    "Development Status :: 4 - Beta",
-    "Intended Audience :: Science/Research",
-    "License :: OSI Approved :: MIT License",
-    "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.8",
-    "Programming Language :: Python :: 3.9",
-    "Programming Language :: Python :: 3.10",
-    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
 ]
 
 [project.urls]

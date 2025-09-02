@@ -1,24 +1,24 @@
-# KHGNN: Kernel Hypergraph Neural Networks
+# KHGNN: Kernelized Hypergraph Neural Networks
 
 [![Paper](https://img.shields.io/badge/Paper-IEEE%20TPAMI-blue)](https://ieeexplore.ieee.org/abstract/document/11063418)
 [![Python](https://img.shields.io/badge/Python-3.8%2B-green)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-1.9%2B-orange)](https://pytorch.org/)
 [![DHG](https://img.shields.io/badge/DHG-0.9.5-red)](https://github.com/iMoonLab/DeepHypergraph)
 
-This repository contains the official implementation of **"Kernel Hypergraph Neural Networks"** published in **IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)**.
+This repository contains the official implementation of **"Kernelized Hypergraph Neural Networks"** published in **IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)**.
 
 ## 🔥 Overview
 
-Kernel Hypergraph Neural Networks (KHGNN) introduces a novel approach to hypergraph learning by incorporating kernel methods into hypergraph neural networks. Our method enhances the representation learning capability on hypergraph-structured data through adaptive kernel functions.
+Kernelized Hypergraph Neural Networks (KHGNN) introduces a novel approach to hypergraph learning by incorporating kernel methods into hypergraph neural networks. Our method enhances the representation learning capability on hypergraph-structured data through adaptive kernel functions.
 
 <div align="center">
-  <img src="assets/khgnn_overview.png" alt="KHGNN Overview" width="800"/>
-  <p><em>KHGNN Overview: Kernel-based hypergraph neural network architecture</em></p>
+  <img src="doc/assets/khgnn_overview.png" alt="KHGNN Overview" width="800"/>
+  <p><em>KHGNN Overview: Kernelized hypergraph neural network architecture</em></p>
 </div>
 
 ### Key Features
 
-- **Kernel-based Hypergraph Convolution**: Novel convolution operation using adaptive kernel functions
+- **Kernelized Hypergraph Convolution**: Novel convolution operation using adaptive kernel functions
 - **Flexible Kernel Types**: Support for polynomial, adaptive polynomial, and mean kernels
 - **Comprehensive Evaluation**: Extensive experiments on multiple benchmark datasets
 - **Easy Integration**: Compatible with existing hypergraph neural network frameworks
@@ -34,7 +34,7 @@ The KHGNN architecture consists of:
 4. **Adaptive Parameters**: Learnable kernel parameters (p, μ)
 
 <div align="center">
-  <img src="assets/khgnn_architecture.png" alt="KHGNN Architecture" width="700"/>
+  <img src="doc/assets/khgnn_architecture.png" alt="KHGNN Architecture" width="700"/>
   <p><em>Detailed KHGNN architecture showing kernel convolution layers and adaptive parameters</em></p>
 </div>
 
@@ -48,8 +48,7 @@ KHGNN/
 ├── prod_train.py           # Inductive training script  
 ├── utils.py                # Data loading and utility functions
 ├── trans_config.yaml       # Transductive experiment config
-├── prod_config.yaml        # Inductive experiment config
-└── format.py               # Code formatting utilities
+└── prod_config.yaml        # Inductive experiment config
 ```
 
 
@@ -215,7 +214,7 @@ uv run trans_train.py model.kernel_type=poly model.p_min=-1.0
 uv run trans_train.py optim.lr=0.01 optim.lr_p=0.001
 ```
 
-📋 **For detailed configuration options, see [CONFIG_GUIDE.md](CONFIG_GUIDE.md)**
+📋 **For detailed configuration options, see [CONFIG_GUIDE.md](doc/CONFIG_GUIDE.md)**
 
 ```
 optim:
@@ -248,7 +247,7 @@ If you find this work useful for your research, please consider citing:
 
 ## 🤝 Contributing
 
-We welcome contributions! Please see our [development guide](DEV_GUIDE.md) for details on:
+We welcome contributions! Please see our [development guide](doc/CONTRIBUTING.md) for details on:
 
 - Code formatting with Black and isort
 - Running tests
