@@ -28,7 +28,7 @@ Kernelized Hypergraph Neural Networks (KHGNN) introduces a novel approach to hyp
 
 The KHGNN architecture consists of:
 
-1. **Kernel Hypergraph Convolution Layer**: Core convolution with adaptive kernels
+1. **Kernelized Hypergraph Convolution Layer**: Core convolution with adaptive kernels
 2. **Node Normalization**: Stabilizes training dynamics
 3. **Residual Connections**: Enables deep architectures
 4. **Adaptive Parameters**: Learnable kernel parameters (p, μ)
