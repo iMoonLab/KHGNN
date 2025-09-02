@@ -1,0 +1,63 @@
+[project]
+name = "khgnn"
+version = "0.1.0"
+description = "Official implementation of Kernel Hypergraph Neural Networks (KHGNN) published in IEEE TPAMI"
+readme = "README.md"
+requires-python = ">=3.8,<3.11"
+dependencies = [
+    "dhg==0.9.5",
+    "hydra-core>=1.3.2",
+    "torch>=1.9.0",
+    "numpy>=1.20.0",
+]
+keywords = ["hypergraph", "neural networks", "graph learning", "kernel methods"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+[project.urls]
+Repository = "https://github.com/iMoonLab/KHGNN"
+Documentation = "https://github.com/iMoonLab/KHGNN#readme"
+"Bug Tracker" = "https://github.com/iMoonLab/KHGNN/issues"
+
+[project.optional-dependencies]
+dev = ["black>=23.0.0", "isort>=5.12.0"]
+
+[tool.black]
+line-length = 88
+target-version = ['py38']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | build
+  | dist
+)/
+'''
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+use_parentheses = true
+ensure_newline_before_comments = true
+line_length = 88
+known_first_party = ["khgnn"]
+src_paths = [".", "tests"]
+
+[dependency-groups]
+dev = ["black>=24.8.0", "isort>=5.13.2"]

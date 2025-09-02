@@ -1,0 +1,54 @@
+
+data:
+  #name: cora
+  #name: pubmed
+  #name: citeseer
+  #name: news20
+  #name: dblp4k-conf
+  #name: dblp4k-paper
+  #name: coauthorship_dblp
+  #name: imdb4k
+  name: dblp4k-term
+  #name: cooking200
+  
+  num_train: 20
+  num_val: 100
+  ft_noise_level: 0.0
+  self_loop: True
+  random_split: True
+  test_ind_ratio: 0.2
+model: 
+
+  #name: gcn
+  #name: gat 
+  #name: hgnn
+  name: hgnnp
+  #name: kerhgnn
+  #name: unignn
+  #name: unigat
+  #name: hnhn
+
+
+  use_norm: True
+  p_min: -0.5
+  p_max: 0.5  
+  mu: 1
+  hid: 32
+  num_layer: 2
+  kernel_type: poly
+optim:
+  lr: 0.1
+  lr_p: 0.001
+
+wd: ${hydra:runtime.cwd}
+data_marker: ${data.name}__${data.num_train}-${data.num_val}__noise-${data.ft_noise_level}
+model_marker: ${model.name}-${model.p_min}-${model.p_max}
+task: ${data_marker}__${model_marker}
+res_path: ${wd}/cache/prod/${task}
+
+hydra:
+  run:
+    dir: ${res_path}/${now:%Y-%m-%d}_${now:%H-%M-%S}
+  sweep:
+    dir: ${res_path}/${now:%Y-%m-%d}_${now:%H-%M-%S}
+    subdir: ${hydra.job.num}
